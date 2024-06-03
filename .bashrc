@@ -144,17 +144,7 @@ alias cd='z'
 export DENO_INSTALL="/$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
-alias auroraunit="docker exec -w /var/www/aurora/_tests/phpunit docker-local-environment-aurora-1 ../../bin/simple-phpunit --configuration phpunit.xml"
-alias aurorawebhook="docker exec -i docker-local-environment-aurora-1 php app/console notification:process"
 . "$HOME/.cargo/env"
-source /home/marqhuez/alacritty/extra/completions/alacritty.bash
-
-# docker aliases
-alias dcbigfish="docker exec -it bigfish-payment-gateway-app-1 bash"
-alias dcaurora="docker exec -it docker-local-environment-aurora-1 bash"
-alias dcpayment="docker exec -it shoprenter-payment-app-1 bash"
-alias dcgateway="docker exec -it payment-gateway-app-1 bash"
-alias dcsubscription="docker exec -it product-subscription-app-1 bash"
 
 # vim project aliases
 alias bigfish="cd bigfish && vim"
