@@ -97,9 +97,9 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias vim='nvim'
-alias ls='exa'
-alias ll='exa -alh'
-alias tree='exa --tree'
+alias ls='eza'
+alias ll='eza -alh'
+alias tree='eza --tree'
 alias cat=bat
 
 # Add an "alert" alias for long running commands.  Use like so:
