@@ -12,3 +12,5 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 vim.wo.signcolumn = "yes"
+
+vim.filetype.add({ extension = { templ = "templ" } })

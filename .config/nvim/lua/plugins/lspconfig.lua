@@ -14,7 +14,9 @@ return {
 		},
 		config = function()
 			local lspconfig = require("lspconfig")
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+			local capabilities = vim.lsp.protocol.make_client_capabilities()
+			capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
@@ -52,8 +54,22 @@ return {
 					client.server_capabilities.documentFormattingProvider = false
 					client.server_capabilities.documentRangeFormattingProvider = false
 				end,
+				capabilities = capabilities,
 			})
 			lspconfig.phpactor.setup({})
+			lspconfig.gopls.setup({
+				filetypes = { "go", "templ" },
+				settings = {
+					gopls = {
+						templateExtensions = { "templ" },
+					},
+				},
+				capabilities = capabilities,
+			})
+			lspconfig.templ.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.htmx.setup({})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "LSP Hover" })
 			vim.keymap.set("n", "<C-p>", vim.lsp.buf.signature_help, { desc = "LSP signature help" })
