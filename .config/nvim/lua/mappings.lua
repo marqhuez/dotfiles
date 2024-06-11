@@ -9,8 +9,8 @@ vim.keymap.set("n", "k", "gj", { desc = "Down" })
 vim.keymap.set("v", "j", "gk", { desc = "Up" })
 vim.keymap.set("v", "k", "gj", { desc = "Down" })
 
-vim.keymap.set("o", "j", "gk", { desc = "Up" })
-vim.keymap.set("o", "k", "gj", { desc = "Down" })
+vim.keymap.set("o", "j", "k", { desc = "Up" })
+vim.keymap.set("o", "k", "j", { desc = "Down" })
 
 vim.keymap.set("n", "í", '"_dl', { desc = "Delete char" })
 vim.keymap.set("v", "p", '"_dP', {})
