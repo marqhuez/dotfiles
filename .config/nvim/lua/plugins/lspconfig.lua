@@ -69,7 +69,16 @@ return {
 			lspconfig.templ.setup({
 				capabilities = capabilities,
 			})
+			lspconfig.html.setup({
+				capabilities = capabilities,
+				filetypes = { "html", "templ" },
+			})
 			lspconfig.htmx.setup({})
+			lspconfig.tailwindcss.setup({
+				capabilities = capabilities,
+				filetypes = { "templ", "astro", "javascript", "typescript", "react" },
+				init_options = { userLanguages = { templ = "html" } },
+			})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "LSP Hover" })
 			vim.keymap.set("n", "<C-p>", vim.lsp.buf.signature_help, { desc = "LSP signature help" })
