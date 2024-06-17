@@ -14,3 +14,9 @@ vim.g.maplocalleader = " "
 vim.wo.signcolumn = "yes"
 
 vim.filetype.add({ extension = { templ = "templ" } })
+
+vim.cmd("cnorea W w")
+vim.cmd("cnorea Wa wa")
+
+vim.cmd("cnorea Q q")
+vim.cmd("cnorea Qa qa")

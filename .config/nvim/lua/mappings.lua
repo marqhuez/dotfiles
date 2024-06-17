@@ -47,6 +47,3 @@ vim.keymap.set("n", "<leader>q", function()
 end, { desc = "Diagnostic setloclist" })
 
 vim.keymap.set("n", "<leader>lr", ":LspRestart<CR>", { desc = "Restart LSP Server" })
-
-vim.cmd("cnorea W w")
-vim.cmd("cnorea Wa wa")
