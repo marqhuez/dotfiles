@@ -20,3 +20,5 @@ vim.cmd("cnorea Wa wa")
 
 vim.cmd("cnorea Q q")
 vim.cmd("cnorea Qa qa")
+
+vim.opt.fillchars:append({ eob = " " })
