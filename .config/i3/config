@@ -43,6 +43,10 @@ exec --no-startup-id nm-applet
 
 default_border pixel 0
 
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -232,3 +236,11 @@ client.unfocused         $overlay0 $base  $text    $rosewater 	$overlay0
 client.urgent            $peach    $base  $peach   $overlay0  	$peach
 client.placeholder       $overlay0 $base  $text    $overlay0  	$overlay0
 client.background        $base
+
+gaps outer -20
+gaps inner 40
+
+default_border pixel 0
+default_floating_border pixel 0
+for_window [class=".*"] border pixel 0
+smart_borders no_gaps
