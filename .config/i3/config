@@ -247,3 +247,5 @@ smart_borders no_gaps
 
 bindsym Print exec flameshot gui -r | xclip -selection clipboard -t image/png && killall flameshot
 bindsym Mod4+l exec i3lock-fancy
+
+bindsym $mod+Shift+v exec nmcli con up Shoprenter
