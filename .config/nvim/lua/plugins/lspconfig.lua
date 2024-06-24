@@ -65,7 +65,13 @@ return {
 				end,
 				capabilities = capabilities,
 			})
-			lspconfig.intelephense.setup({})
+			lspconfig.intelephense.setup({
+				on_attach = function(client, _)
+					client.server_capabilities.documentFormattingProvider = false
+					client.server_capabilities.documentRangeFormattingProvider = false
+				end,
+				capabilities = capabilities,
+			})
 			lspconfig.gopls.setup({
 				filetypes = { "go", "templ" },
 				settings = {
