@@ -65,7 +65,7 @@ return {
 				end,
 				capabilities = capabilities,
 			})
-			lspconfig.phpactor.setup({})
+			lspconfig.intelephense.setup({})
 			lspconfig.gopls.setup({
 				filetypes = { "go", "templ" },
 				settings = {

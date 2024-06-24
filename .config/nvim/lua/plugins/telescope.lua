@@ -18,11 +18,8 @@ return {
 			vim.keymap.set("n", "gr", builtin.lsp_references, { desc = "Goto References" })
 			vim.keymap.set("n", "gi", builtin.lsp_implementations, { desc = "Goto Implementation" })
 
-			vim.keymap.set("n", "<leader>/", function()
-				builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-					winblend = 10,
-					previewer = false,
-				}))
+			vim.keymap.set("n", "<leader>fi", function()
+				builtin.current_buffer_fuzzy_find()
 			end, { desc = "Fuzzily search in current buffer" })
 		end,
 	},
