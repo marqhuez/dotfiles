@@ -48,7 +48,8 @@ return {
 					plugins = {
 						{
 							name = "@vue/typescript-plugin",
-							location = "/home/marqhuez/.nvm/versions/node/v20.11.1/lib/node_modules/@vue/typescript-plugin",
+							location =
+							"/home/marqhuez/.nvm/versions/node/v20.11.1/lib/node_modules/@vue/typescript-plugin",
 							languages = { "typescript", "vue" },
 						},
 					},
@@ -65,10 +66,6 @@ return {
 				capabilities = capabilities,
 			})
 			lspconfig.intelephense.setup({
-				on_attach = function(client, _)
-					client.server_capabilities.documentFormattingProvider = false
-					client.server_capabilities.documentRangeFormattingProvider = false
-				end,
 				capabilities = capabilities,
 			})
 			lspconfig.gopls.setup({
