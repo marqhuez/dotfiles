@@ -33,11 +33,13 @@ vim.keymap.set("v", "v", "<Esc>", { desc = "Exit visual mode" })
 vim.keymap.set("i", "jk", "<Esc>", { desc = "Exit insert mode" })
 vim.keymap.set("i", "kj", "<Esc>", { desc = "Exit insert mode" })
 
-vim.keymap.set("i", "<A-d>", "<C-o>yy<C-o>p", { desc = "Duplicate line" })
-vim.keymap.set("n", "<A-d>", "yyp", { desc = "Duplicate line" })
+vim.keymap.set("i", "<C-A-d>", "<C-o>yy<C-o>p", { desc = "Duplicate line" })
+vim.keymap.set("n", "<C-A-d>", "yyp", { desc = "Duplicate line" })
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz", {})
 vim.keymap.set("n", "<C-u>", "<C-u>zz", {})
+vim.keymap.set("n", "<C-o>", "<C-o>zz", {})
+vim.keymap.set("n", "<C-i>", "<C-i>zz", {})
 
 vim.keymap.set("n", "<leader>fd", function()
 	vim.diagnostic.open_float({ border = "rounded" })
