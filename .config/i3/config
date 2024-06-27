@@ -20,7 +20,7 @@ exec_always --no-startup-id killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch-polybar.sh 
 exec_always --no-startup-id feh --bg-scale ~/background.png
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
-exec --no-startup-id xset r rate 400 40
+exec_always --no-startup-id xset r rate 400 40
 exec xrandr --output HDMI-1 --mode 1920x1080 --rate 144.00
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left

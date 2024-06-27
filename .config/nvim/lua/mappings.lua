@@ -49,3 +49,4 @@ vim.keymap.set("n", "<leader>q", function()
 end, { desc = "Diagnostic setloclist" })
 
 vim.keymap.set("n", "<leader>lr", ":LspRestart<CR>", { desc = "Restart LSP Server" })
+vim.keymap.set("n", "<A-v>", "<c-v>", { desc = "Block select" })
