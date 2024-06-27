@@ -21,6 +21,7 @@ exec_always --no-startup-id ~/.config/polybar/launch-polybar.sh
 exec_always --no-startup-id feh --bg-scale ~/background.png
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
 exec --no-startup-id xset r rate 400 40
+exec xrandr --output HDMI-1 --mode 1920x1080 --rate 144.00
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -249,3 +250,17 @@ bindsym Print exec flameshot gui -r | xclip -selection clipboard -t image/png &&
 bindsym Mod4+l exec i3lock-fancy
 
 bindsym $mod+Shift+v exec nmcli con up Shoprenter
+
+bindsym $mod+Ctrl+l move workspace to output right
+bindsym $mod+Ctrl+h move workspace to output left
+
+# input type:keyboard {
+# 	xkb_layout hu
+#     repeat_delay 400
+#     repeat_rate 40
+# }
+#
+# input type:touchpad {
+#     tap enabled
+#     natural_scroll enabled
+# }
