@@ -2,7 +2,7 @@ return {
 	{
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.6",
-		dependencies = { "nvim-lua/plenary.nvim" },
+		dependencies = { "nvim-lua/plenary.nvim", "debugloop/telescope-undo.nvim" },
 		config = function()
 			local conf = require("telescope.config").values
 			local builtin = require("telescope.builtin")
@@ -21,6 +21,9 @@ return {
 			vim.keymap.set("n", "<leader>fi", function()
 				builtin.current_buffer_fuzzy_find()
 			end, { desc = "Fuzzily search in current buffer" })
+
+			require("telescope").load_extension("undo")
+			vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>")
 		end,
 	},
 	{
