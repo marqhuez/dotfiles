@@ -111,8 +111,8 @@ return {
 			lspconfig.htmx.setup({})
 			lspconfig.tailwindcss.setup({
 				capabilities = capabilities,
-				filetypes = { "templ", "astro", "javascript", "typescript", "react" },
-				init_options = { userLanguages = { templ = "html" } },
+				filetypes = { "templ", "astro", "javascript", "typescript", "react", "ejs", "html" },
+				init_options = { userLanguages = { templ = "html", ejs = "html" } },
 			})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "LSP Hover" })

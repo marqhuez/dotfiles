@@ -22,3 +22,17 @@ vim.cmd("cnorea Q q")
 vim.cmd("cnorea Qa qa")
 
 vim.opt.fillchars:append({ eob = " " })
+
+vim.cmd([[
+    augroup ejs_as_html
+        autocmd!
+        autocmd BufNewFile,BufRead *.ejs set filetype=html
+    augroup END
+]])
+
+vim.cmd([[
+    augroup local_env_as_sh
+        autocmd!
+        autocmd BufNewFile,BufRead .env* set filetype=sh
+    augroup END
+]])
