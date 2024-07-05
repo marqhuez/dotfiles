@@ -157,3 +157,6 @@ alias kexec="~/kubexec.sh"
 alias klogs="~/kubelogs.sh"
 
 alias brightness="~/brightness.sh"
+
+source <(helm completion bash)
+source <(kubectl completion bash)
