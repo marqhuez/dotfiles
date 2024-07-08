@@ -10,6 +10,11 @@ return {
 			git = {
 				ignore = false,
 			},
+			update_focused_file = {
+				enable = true,
+				update_root = false,
+				ignore_list = {},
+			},
 		})
 		vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", {})
 		vim.keymap.set("n", "<leader>tf", ":NvimTreeFindFile<CR>", { desc = "Find current file in tree" })
