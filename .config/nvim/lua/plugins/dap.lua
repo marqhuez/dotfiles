@@ -6,6 +6,7 @@ return {
 	},
 	config = function()
 		local dap, dapui = require("dap"), require("dapui")
+		dapui.setup()
 
 		dap.listeners.before.attach.dapui_config = function()
 			dapui.open()
@@ -22,11 +23,18 @@ return {
 
 		vim.keymap.set("n", "<leader>dt", dap.toggle_breakpoint, { desc = "Toggle breakpoint" })
 		vim.keymap.set("n", "<leader>dc", dap.continue, { desc = "Continue debug" })
+		vim.keymap.set("n", "<leader>ds", function()
+			dap.disconnect()
+			dapui.close()
+			vim.cmd("NvimTreeToggle")
+			vim.cmd("NvimTreeToggle")
+			vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<c-w>l", true, true, true), "n", true)
+		end, { desc = "Continue debug" })
 
 		dap.adapters.php = {
 			type = "executable",
 			command = "node",
-			args = { "~/xdebug/out/phpDebug.js" },
+			args = { os.getenv("HOME") .. "/xdebug/out/phpDebug.js" },
 		}
 
 		dap.configurations.php = {
@@ -34,7 +42,11 @@ return {
 				type = "php",
 				request = "launch",
 				name = "Listen for Xdebug",
-				port = 9000,
+				port = 9003,
+				hostname = "192.168.0.106",
+				pathMappings = {
+					["/var/www/aurora"] = "/home/marqhuez/codebase/aurora",
+				},
 			},
 		}
 	end,
