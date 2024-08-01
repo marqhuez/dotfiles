@@ -29,7 +29,7 @@ return {
 			vim.cmd("NvimTreeToggle")
 			vim.cmd("NvimTreeToggle")
 			vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<c-w>l", true, true, true), "n", true)
-		end, { desc = "Continue debug" })
+		end, { desc = "Stop debug" })
 
 		dap.adapters.php = {
 			type = "executable",
