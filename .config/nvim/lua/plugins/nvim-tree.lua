@@ -14,6 +14,9 @@ return {
 				enable = true,
 				update_root = false,
 				ignore_list = {},
+				exclude = function(tbl)
+					return string.match(tbl.match, "vendor") or string.match(tbl.match, "node_modules")
+				end,
 			},
 		})
 		vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", {})
