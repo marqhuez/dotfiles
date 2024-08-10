@@ -108,7 +108,9 @@ return {
 				capabilities = capabilities,
 				filetypes = { "html", "templ" },
 			})
-			lspconfig.htmx.setup({})
+			lspconfig.htmx.setup({
+				filetypes = { "html", "blade" },
+			})
 			lspconfig.tailwindcss.setup({
 				capabilities = capabilities,
 				filetypes = { "templ", "astro", "javascript", "typescript", "react", "ejs", "html" },
