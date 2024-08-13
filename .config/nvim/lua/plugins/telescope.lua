@@ -7,9 +7,12 @@ return {
 			local conf = require("telescope.config").values
 			local builtin = require("telescope.builtin")
 
-			vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find Files" })
-			vim.keymap.set("n", "<leader>fw", builtin.live_grep, {
-				vimgrep_arguments = table.insert(conf.vimgrep_arguments, "--fixed-strings"),
+			vim.keymap.set("n", "<leader>ff", function()
+				builtin.find_files({ hidden = true, no_ignore = true })
+			end, { desc = "Find Files" })
+			vim.keymap.set("n", "<leader>fw", function()
+				builtin.live_grep({ vimgrep_arguments = table.insert(conf.vimgrep_arguments, "--fixed-strings") })
+			end, {
 				desc = "Find Word",
 			})
 			vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Find Buffer" })
@@ -56,6 +59,18 @@ return {
 				extensions = {
 					["ui-select"] = {
 						require("telescope.themes").get_dropdown({}),
+					},
+				},
+				defaults = {
+					file_ignore_patterns = {
+						"node_modules",
+						"vendor",
+						"cache",
+						"cache",
+						".phpunit",
+						".idea",
+						".git",
+						"build",
 					},
 				},
 			})

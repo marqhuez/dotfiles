@@ -4,6 +4,7 @@ return {
 		vim.g.php_auto_namespacer_map = {
 			["/home/marqhuez/codebase/ms-sr-partner-dashboard/src"] = "App\\",
 			["/home/marqhuez/projects/laravel/test-app/app"] = "App\\",
+			["/home/marqhuez/codebase/ms-payment-gateway/src"] = "App\\",
 		}
 	end,
 }
