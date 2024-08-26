@@ -7,8 +7,7 @@ return {
 		vim.keymap.set("n", "X", "D", { desc = "Cut" })
 		vim.keymap.set("v", "x", "d", { desc = "Cut" })
 
-		require("cutlass").setup({
-			exclude = { "ns", "nS", "vs", "vS" },
-		})
+		require("cutlass").setup();
 	end,
+	priority = 3000
 }
