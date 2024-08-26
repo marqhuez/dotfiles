@@ -71,6 +71,7 @@ return {
 						".idea",
 						".git",
 						"build",
+						"dist",
 					},
 				},
 			})

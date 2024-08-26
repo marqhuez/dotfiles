@@ -5,6 +5,7 @@ return {
 			["/home/marqhuez/codebase/ms-sr-partner-dashboard/src"] = "App\\",
 			["/home/marqhuez/projects/laravel/test-app/app"] = "App\\",
 			["/home/marqhuez/codebase/ms-payment-gateway/src"] = "App\\",
+			["/home/marqhuez/projects/ab-test-laravel/app"] = "App\\",
 		}
 	end,
 }
