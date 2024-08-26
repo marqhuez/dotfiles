@@ -13,8 +13,6 @@ vim.g.maplocalleader = " "
 
 vim.wo.signcolumn = "yes"
 
-vim.filetype.add({ extension = { templ = "templ" } })
-
 vim.cmd("cnorea W w")
 vim.cmd("cnorea Wa wa")
 
@@ -22,6 +20,14 @@ vim.cmd("cnorea Q q")
 vim.cmd("cnorea Qa qa")
 
 vim.opt.fillchars:append({ eob = " " })
+vim.opt.splitright = true
+
+vim.filetype.add({
+	extension = {
+		['http'] = 'http',
+		['templ'] = 'templ'
+	},
+})
 
 vim.cmd([[
     augroup ejs_as_html
@@ -36,3 +42,11 @@ vim.cmd([[
         autocmd BufNewFile,BufRead .env* set filetype=sh
     augroup END
 ]])
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "json",
+    callback = function(ev)
+		print(ev)
+        vim.bo[ev.buf].formatprg = "jq"
+    end,
+})
