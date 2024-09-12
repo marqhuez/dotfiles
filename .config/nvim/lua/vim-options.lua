@@ -4,6 +4,7 @@ vim.opt.relativenumber = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.swapfile = false
 vim.opt.scrolloff = 10
+vim.opt.fixendofline = true
 
 vim.wo.number = true
 vim.o.hlsearch = false
@@ -24,8 +25,8 @@ vim.opt.splitright = true
 
 vim.filetype.add({
 	extension = {
-		['http'] = 'http',
-		['templ'] = 'templ'
+		["http"] = "http",
+		["templ"] = "templ",
 	},
 })
 
@@ -44,9 +45,9 @@ vim.cmd([[
 ]])
 
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = "json",
-    callback = function(ev)
+	pattern = "json",
+	callback = function(ev)
 		print(ev)
-        vim.bo[ev.buf].formatprg = "jq"
-    end,
+		vim.bo[ev.buf].formatprg = "jq"
+	end,
 })

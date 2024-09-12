@@ -29,6 +29,7 @@ return {
 
 			luasnip.filetype_extend("templ", { "html" })
 			luasnip.filetype_extend("blade", { "html" })
+			luasnip.filetype_extend("tsx", { "html" })
 
 			cmp.setup({
 				snippet = {

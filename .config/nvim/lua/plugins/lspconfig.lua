@@ -65,6 +65,13 @@ return {
 			})
 			lspconfig.intelephense.setup({
 				capabilities = capabilities,
+				settings = {
+					intelephense = {
+						format = {
+							enable = false,
+						},
+					},
+				},
 			})
 			lspconfig.gopls.setup({
 				filetypes = { "go", "templ" },

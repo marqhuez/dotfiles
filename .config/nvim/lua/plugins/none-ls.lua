@@ -9,6 +9,9 @@ return {
 				null_ls.builtins.formatting.stylua,
 				null_ls.builtins.formatting.prettier,
 				null_ls.builtins.formatting.gofmt,
+				null_ls.builtins.formatting.phpcbf,
+				null_ls.builtins.formatting.blade_formatter,
+				null_ls.builtins.diagnostics.phpcs,
 			},
 			on_attach = function(client, bufnr)
 				if client.supports_method("textDocument/formatting") then
