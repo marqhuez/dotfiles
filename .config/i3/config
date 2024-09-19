@@ -250,6 +250,7 @@ default_border pixel 0
 default_floating_border pixel 0
 for_window [class=".*"] border pixel 0
 smart_borders no_gaps
+focus_follows_mouse no
 
 bindsym Print exec flameshot gui -r | xclip -selection clipboard -t image/png && killall flameshot
 bindsym Mod4+l exec ~/dotfiles/.config/i3/lock -b=0x6
