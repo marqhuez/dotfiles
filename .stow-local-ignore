@@ -25,3 +25,5 @@ _darcs
 /.config/tmux/plugins
 40-touchpad.conf
 50-mouse.conf
+
+background*
