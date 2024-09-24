@@ -6,12 +6,16 @@ return {
 		config = function()
 			local conf = require("telescope.config").values
 			local builtin = require("telescope.builtin")
+			local pickers = require("user.telescope-pickers")
 
 			vim.keymap.set("n", "<leader>ff", function()
-				builtin.find_files({ hidden = true, no_ignore = true })
+				pickers.prettyFilesPicker({ picker = "find_files", options = { hidden = true, no_ignore = true } })
 			end, { desc = "Find Files" })
 			vim.keymap.set("n", "<leader>fw", function()
-				builtin.live_grep({ vimgrep_arguments = table.insert(conf.vimgrep_arguments, "--fixed-strings") })
+				pickers.prettyGrepPicker({
+					picker = "live_grep",
+					vimgrep_arguments = table.insert(conf.vimgrep_arguments, "--fixed-strings"),
+				})
 			end, {
 				desc = "Find Word",
 			})
@@ -19,7 +23,9 @@ return {
 			vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Find Help" })
 
 			vim.keymap.set("n", "gd", builtin.lsp_definitions, { desc = "Goto Definition" })
-			vim.keymap.set("n", "gr", builtin.lsp_references, { desc = "Goto References" })
+			vim.keymap.set("n", "gr", function()
+				pickers.prettyLspReferences({})
+			end, { desc = "Goto References" })
 			vim.keymap.set("n", "gi", builtin.lsp_implementations, { desc = "Goto Implementation" })
 
 			vim.keymap.set("n", "<leader>fi", function()
