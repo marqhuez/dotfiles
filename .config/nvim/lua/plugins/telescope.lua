@@ -24,9 +24,11 @@ return {
 
 			vim.keymap.set("n", "gd", builtin.lsp_definitions, { desc = "Goto Definition" })
 			vim.keymap.set("n", "gr", function()
-				pickers.prettyLspReferences({})
+				pickers.prettyLspActions({ picker = "lsp_references" })
 			end, { desc = "Goto References" })
-			vim.keymap.set("n", "gi", builtin.lsp_implementations, { desc = "Goto Implementation" })
+			vim.keymap.set("n", "gi", function()
+				pickers.prettyLspActions({ picker = "lsp_implementations" })
+			end, { desc = "Goto Implementation" })
 
 			vim.keymap.set("n", "<leader>fi", function()
 				builtin.current_buffer_fuzzy_find()

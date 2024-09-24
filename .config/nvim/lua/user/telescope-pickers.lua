@@ -116,7 +116,7 @@ function telescopePickers.prettyFilesPicker(pickerAndOptions)
 			--          and the second one is the highlight information, this will be done by the displayer
 			--          internally and return in the correct format.
 			return displayer({
-				{ icon,          iconHighlight },
+				{ icon, iconHighlight },
 				tailForDisplay,
 				{ pathToDisplay, "TelescopeResultsComment" },
 			})
@@ -245,7 +245,7 @@ function telescopePickers.prettyGrepPicker(pickerAndOptions)
 			--          and the second one is the highlight information, this will be done by the displayer
 			--          internally and return in the correct format.
 			return displayer({
-				{ icon,          iconHighlight },
+				{ icon, iconHighlight },
 				tailForDisplay,
 				{ pathToDisplay, "TelescopeResultsComment" },
 				text,
@@ -327,7 +327,7 @@ function telescopePickers.prettyDocumentSymbols(localOptions)
 			return displayer({
 				string.format("%s", kind_icons[(entry.symbol_type:lower():gsub("^%l", string.upper))]),
 				{ entry.symbol_type:lower(), "TelescopeResultsVariable" },
-				{ entry.symbol_name,         "TelescopeResultsConstant" },
+				{ entry.symbol_name, "TelescopeResultsConstant" },
 			})
 		end
 
@@ -371,7 +371,7 @@ function telescopePickers.prettyWorkspaceSymbols(localOptions)
 			return displayer({
 				string.format("%s", kind_icons[(entry.symbol_type:lower():gsub("^%l", string.upper))]),
 				{ entry.symbol_type:lower(), "TelescopeResultsVariable" },
-				{ entry.symbol_name,         "TelescopeResultsConstant" },
+				{ entry.symbol_name, "TelescopeResultsConstant" },
 				tailForDisplay,
 				{ pathToDisplay, "TelescopeResultsComment" },
 			})
@@ -412,10 +412,10 @@ function telescopePickers.prettyBuffersPicker(localOptions)
 			local icon, iconHighlight = telescopeUtilities.get_devicons(tail)
 
 			return displayer({
-				{ icon,                      iconHighlight },
+				{ icon, iconHighlight },
 				tailForDisplay,
 				{ "(" .. entry.bufnr .. ")", "TelescopeResultsNumber" },
-				{ path,                      "TelescopeResultsComment" },
+				{ path, "TelescopeResultsComment" },
 			})
 		end
 
@@ -425,13 +425,13 @@ function telescopePickers.prettyBuffersPicker(localOptions)
 	require("telescope.builtin").buffers(options)
 end
 
-function telescopePickers.prettyLspReferences(localOptions)
-	if localOptions ~= nil and type(localOptions) ~= "table" then
+function telescopePickers.prettyLspActions(pickerAndOptions)
+	if pickerAndOptions ~= nil and type(pickerAndOptions) ~= "table" or pickerAndOptions.picker == nil then
 		print("Options must be a table.")
 		return
 	end
 
-	local options = localOptions or {}
+	local options = pickerAndOptions.options or {}
 
 	local originalEntryMaker = telescopeMakeEntryModule.gen_from_quickfix(options)
 
@@ -454,7 +454,7 @@ function telescopePickers.prettyLspReferences(localOptions)
 			local coordinates = string.format("%s:%s ", entry.lnum, entry.col)
 
 			return displayer({
-				{ icon,          iconHighlight },
+				{ icon, iconHighlight },
 				tailForDisplay .. coordinates,
 				{ pathToDisplay, "TelescopeResultsComment" },
 			})
@@ -463,7 +463,13 @@ function telescopePickers.prettyLspReferences(localOptions)
 		return originalEntryTable
 	end
 
-	require("telescope.builtin").lsp_references(options)
+	if pickerAndOptions.picker == "lsp_references" then
+		require("telescope.builtin").lsp_references(options)
+	elseif pickerAndOptions.picker == "lsp_implementations" then
+		require("telescope.builtin").lsp_implementations(options)
+	else
+		print("Picker is not supported by Pretty Grep Picker")
+	end
 end
 
 -- Return the module for use
