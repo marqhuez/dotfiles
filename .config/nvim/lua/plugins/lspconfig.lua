@@ -111,7 +111,7 @@ return {
 					client.server_capabilities.documentRangeFormattingProvider = false
 				end,
 				capabilities = capabilities,
-				filetypes = { "html", "templ" },
+				filetypes = { "html", "templ", "blade" },
 			})
 			lspconfig.htmx.setup({
 				filetypes = { "html", "blade" },
