@@ -22,7 +22,9 @@ return {
 			vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Find Buffer" })
 			vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Find Help" })
 
-			vim.keymap.set("n", "gd", builtin.lsp_definitions, { desc = "Goto Definition" })
+			vim.keymap.set("n", "gd", function()
+				pickers.prettyLspActions({ picker = "lsp_definitions" })
+			end, { desc = "Goto Definition" })
 			vim.keymap.set("n", "gr", function()
 				pickers.prettyLspActions({ picker = "lsp_references" })
 			end, { desc = "Goto References" })
