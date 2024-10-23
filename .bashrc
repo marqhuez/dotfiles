@@ -95,14 +95,14 @@ fi
 PS1="   \w  "
 
 # some more ls aliases
-# alias ll='ls -alF'
-# alias la='ls -A'
-# alias l='ls -CF'
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
 alias vim='nvim'
-# alias ls='eza'
-# alias ll='eza -alh'
-# alias tree='eza --tree'
-# alias cat=bat
+alias ls='eza'
+alias ll='eza -alh'
+alias tree='eza --tree'
+alias cat=bat
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
