@@ -18,7 +18,7 @@ font pango:Cantarell:monospace 10
 exec_always --no-startup-id picom 
 exec_always --no-startup-id killall polybar 
 exec_always --no-startup-id ~/.config/polybar/launch-polybar.sh 
-exec_always --no-startup-id feh --bg-scale ~/dotfiles/background3.png
+exec_always --no-startup-id feh --bg-scale ~/dotfiles/backgrounds/background3.png
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
 exec xrandr --output HDMI-1 --mode 1920x1080 --rate 144.00
 
