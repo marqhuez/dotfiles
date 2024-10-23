@@ -142,6 +142,7 @@ export PATH=~/go/bin:$PATH
 
 eval "$(zoxide init bash)"
 alias cd='z'
+alias pacman='sudo pacman -S '
 
 # export DENO_INSTALL="/$HOME/.deno"
 # export PATH="$DENO_INSTALL/bin:$PATH"
