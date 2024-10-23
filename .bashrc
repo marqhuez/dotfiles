@@ -95,14 +95,14 @@ fi
 PS1="   \w  "
 
 # some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+# alias ll='ls -alF'
+# alias la='ls -A'
+# alias l='ls -CF'
 alias vim='nvim'
-alias ls='eza'
-alias ll='eza -alh'
-alias tree='eza --tree'
-alias cat=bat
+# alias ls='eza'
+# alias ll='eza -alh'
+# alias tree='eza --tree'
+# alias cat=bat
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -138,25 +138,14 @@ export PATH=$BUN_INSTALL/bin:$PATH
 
 export PATH=~/go/bin:$PATH
 
-source /usr/share/doc/fzf/examples/key-bindings.bash
+# source /usr/share/doc/fzf/examples/key-bindings.bash
 
-eval "$(~/.local/bin/zoxide init bash)"
+eval "$(zoxide init bash)"
 alias cd='z'
 
-export DENO_INSTALL="/$HOME/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
+# export DENO_INSTALL="/$HOME/.deno"
+# export PATH="$DENO_INSTALL/bin:$PATH"
+#
+# . "$HOME/.cargo/env"
 
-. "$HOME/.cargo/env"
-
-# vim project aliases
-alias bigfish="cd bigfish && vim"
-alias subscription="cd product-subscription && vim"
-
-alias getpod="~/getpod.sh"
-alias kexec="~/kubexec.sh"
-alias klogs="~/kubelogs.sh"
-
-alias brightness="~/brightness.sh"
-
-source <(helm completion bash)
-source <(kubectl completion bash)
+complete -cf sudo

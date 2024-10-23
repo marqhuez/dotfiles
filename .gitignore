@@ -1,2 +1,4 @@
 .config/tmux/plugins
 .config/lazygit/state.yml
+
+.local/share/fonts/JetBrains
