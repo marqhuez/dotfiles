@@ -113,14 +113,14 @@ return {
 					client.server_capabilities.documentRangeFormattingProvider = false
 				end,
 				capabilities = capabilities,
-				filetypes = { "html", "templ", "blade" },
+				filetypes = { "html", "templ", "blade", "tsx", "typescriptreact" },
 			})
 			lspconfig.htmx.setup({
 				filetypes = { "html", "blade" },
 			})
 			lspconfig.tailwindcss.setup({
 				capabilities = capabilities,
-				filetypes = { "templ", "astro", "javascript", "typescript", "react", "ejs", "html", "blade" },
+				filetypes = { "templ", "astro", "javascript", "typescript", "react", "ejs", "html", "blade", "typescriptreact" },
 				init_options = { userLanguages = { templ = "html", ejs = "html", blade = "html" } },
 			})
 

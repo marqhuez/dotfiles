@@ -29,7 +29,7 @@ return {
 
 			luasnip.filetype_extend("templ", { "html" })
 			luasnip.filetype_extend("blade", { "html" })
-			luasnip.filetype_extend("tsx", { "html" })
+			luasnip.filetype_extend("typescriptreact", { "html" })
 
 			cmp.setup({
 				snippet = {

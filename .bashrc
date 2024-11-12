@@ -7,11 +7,20 @@ case $- in
       *) return;;
 esac
 
-# if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-#   exec tmux
-# fi
-
-[ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
+if [ -z "$TMUX" ]; then
+    base_session='my_session'
+    # Create a new session if it doesn't exist
+    tmux has-session -t $base_session || tmux new-session -d -s $base_session
+    # Are there any clients connected already?
+    client_cnt=$(tmux list-clients | wc -l)
+    if [ $client_cnt -ge 1 ]; then
+        session_name=$base_session"-"$client_cnt
+        tmux new-session -d -t $base_session -s $session_name
+        tmux -2 attach-session -t $session_name \; set-option destroy-unattached
+    else
+        tmux -2 attach-session -t $base_session
+    fi
+fi
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -140,9 +149,11 @@ export PATH=~/go/bin:$PATH
 
 # source /usr/share/doc/fzf/examples/key-bindings.bash
 
+eval "$(fzf --bash)"
 eval "$(zoxide init bash)"
+
 alias cd='z'
-alias pacman='sudo pacman -S '
+# alias pacman='sudo pacman -S '
 
 # export DENO_INSTALL="/$HOME/.deno"
 # export PATH="$DENO_INSTALL/bin:$PATH"

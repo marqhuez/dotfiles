@@ -11,7 +11,8 @@ return {
 				null_ls.builtins.formatting.gofmt,
 				null_ls.builtins.formatting.phpcbf,
 				null_ls.builtins.formatting.blade_formatter,
-				null_ls.builtins.diagnostics.phpcs,
+				-- null_ls.builtins.diagnostics.phpcs,
+				null_ls.builtins.diagnostics.phpstan
 			},
 			on_attach = function(client, bufnr)
 				if client.supports_method("textDocument/formatting") then
