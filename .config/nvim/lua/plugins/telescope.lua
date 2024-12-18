@@ -21,6 +21,7 @@ return {
 			})
 			vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Find Buffer" })
 			vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Find Help" })
+			vim.keymap.set("n", "<leader>fs", builtin.lsp_document_symbols, { desc = "Find Symbols" })
 
 			vim.keymap.set("n", "gd", function()
 				pickers.prettyLspActions({ picker = "lsp_definitions" })

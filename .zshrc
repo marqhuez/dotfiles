@@ -11,9 +11,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # ZSH_THEME="robbyrussell"
 PS1="   %~  "
 
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
 alias vim='nvim'
 alias ls='eza'
 alias ll='eza -alh'
@@ -21,7 +18,7 @@ alias tree='eza --tree'
 alias cat=bat
 alias cd='z'
 
-alias bc='~/tmux_attach_bc_session.sh'
+alias bc='~/dotfiles/scripts/tmux_attach_bc_session.sh'
 
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
