@@ -47,8 +47,7 @@ return {
 					plugins = {
 						{
 							name = "@vue/typescript-plugin",
-							location =
-							"/home/marqhuez/.nvm/versions/node/v20.11.1/lib/node_modules/@vue/typescript-plugin",
+							location = "/home/marqhuez/.nvm/versions/node/v20.11.1/lib/node_modules/@vue/typescript-plugin",
 							languages = { "typescript", "vue" },
 						},
 					},
@@ -120,7 +119,17 @@ return {
 			})
 			lspconfig.tailwindcss.setup({
 				capabilities = capabilities,
-				filetypes = { "templ", "astro", "javascript", "typescript", "react", "ejs", "html", "blade", "typescriptreact" },
+				filetypes = {
+					"templ",
+					"astro",
+					"javascript",
+					"typescript",
+					"react",
+					"ejs",
+					"html",
+					"blade",
+					"typescriptreact",
+				},
 				init_options = { userLanguages = { templ = "html", ejs = "html", blade = "html" } },
 			})
 
