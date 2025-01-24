@@ -10,7 +10,7 @@ return {
 				typescriptreact = { "prettierd", "prettier", stop_after_first = true },
 			},
 
-			vim.keymap.set("n", "<leader>fm", vim.lsp.buf.format, { desc = "LSP Format" }),
+			-- vim.keymap.set("n", "<leader>fm", vim.lsp.buf.format, { desc = "LSP Format" }),
 
 			vim.api.nvim_create_autocmd("BufWritePre", {
 				pattern = "*",
