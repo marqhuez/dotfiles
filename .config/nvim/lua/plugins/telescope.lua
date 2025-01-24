@@ -14,7 +14,10 @@ return {
 			vim.keymap.set("n", "<leader>fw", function()
 				pickers.prettyGrepPicker({
 					picker = "live_grep",
-					vimgrep_arguments = table.insert(conf.vimgrep_arguments, "--fixed-strings"),
+					options = {
+						glob_pattern = "",
+						search_dirs = {}
+					}
 				})
 			end, {
 				desc = "Find Word",
