@@ -8,12 +8,13 @@ return {
 			local pickers = require("user.telescope-pickers")
 
 			vim.keymap.set("n", "<leader>fm", function()
-				vim.ui.input({prompt = "File name mask: "}, function (input)
-					pickers.prettyGrepPicker(
-						{ picker = "live_grep", options = { hidden = true, no_ignore = true, glob_pattern = input }}
-					)
+				vim.ui.input({ prompt = "File name mask: " }, function(input)
+					pickers.prettyGrepPicker({
+						picker = "live_grep",
+						options = { hidden = true, no_ignore = true, glob_pattern = input },
+					})
 				end, { desc = "Find Files With Mask" })
-			end);
+			end)
 
 			vim.keymap.set("n", "<leader>ff", function()
 				pickers.prettyFilesPicker({ picker = "find_files", options = { hidden = true, no_ignore = true } })
@@ -21,12 +22,13 @@ return {
 
 			vim.keymap.set("n", "<leader>fw", function()
 				local api = require("nvim-tree.api")
-				local isValidForGrepping = api.tree.is_tree_buf() and api.tree.get_node_under_cursor().type == 'directory'
+				local isValidForGrepping = api.tree.is_tree_buf()
+					and api.tree.get_node_under_cursor().type == "directory"
 
 				local options
 				if isValidForGrepping then
 					local selectedNodeName = api.tree.get_node_under_cursor().name
-					options = {search_dirs = {selectedNodeName}}
+					options = { search_dirs = { selectedNodeName } }
 				else
 					options = {}
 				end
