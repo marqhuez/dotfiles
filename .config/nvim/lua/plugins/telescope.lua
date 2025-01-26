@@ -13,7 +13,7 @@ return {
 						picker = "live_grep",
 						options = { hidden = true, no_ignore = true, glob_pattern = input },
 					})
-				end, { desc = "Find Files With Mask" })
+				end, { desc = "Find Files with mask" })
 			end)
 
 			vim.keymap.set("n", "<leader>ff", function()
@@ -100,15 +100,14 @@ return {
 				},
 				defaults = {
 					file_ignore_patterns = {
-						"node_modules",
-						"vendor",
-						"cache",
-						"cache",
-						".phpunit",
-						".idea",
-						".git",
-						"build",
-						"dist",
+						"node_modules/",
+						"vendor/",
+						"cache/",
+						".phpunit/",
+						".idea/",
+						".git/",
+						"build/",
+						"dist/",
 					},
 				},
 			})

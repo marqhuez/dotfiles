@@ -42,6 +42,8 @@ return {
 
 		vim.api.nvim_set_hl(0, "TelescopeSelection", { fg = "#A9B0B8", bg = "#292c33", bold = true })
 		vim.api.nvim_set_hl(0, "TelescopeMatching", { fg = "#61AFEF", bold = true })
+
+		vim.api.nvim_set_hl(0, "GitSignsCurrentLineBlame", { bg = "#1E222A", fg = "#80848d" })
 	end,
 }
 -- return {
