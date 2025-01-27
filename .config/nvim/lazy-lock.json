@@ -12,6 +12,7 @@
   "cutlass.nvim": { "branch": "main", "commit": "1ac7e4b53d79410be52a9e464d44c60556282b3e" },
   "fidget.nvim": { "branch": "main", "commit": "d855eed8a06531a7e8fd0684889b2943f373c469" },
   "friendly-snippets": { "branch": "main", "commit": "00ebcaa159e817150bd83bfe2d51fa3b3377d5c4" },
+  "fzf-lua": { "branch": "main", "commit": "4c0e83fd4c6c05f73b805d1051baf3a3daf418b0" },
   "gitsigns.nvim": { "branch": "main", "commit": "80214a857ce512cc64964abddc1d8eb5a3e28396" },
   "harpoon": { "branch": "harpoon2", "commit": "0378a6c428a0bed6a2781d459d7943843f374bce" },
   "hererocks": { "branch": "master", "commit": "c9c5444dea1e07e005484014a8231aa667be30b6" },

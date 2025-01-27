@@ -2,7 +2,10 @@ return {
 	{
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.6",
-		dependencies = { "nvim-lua/plenary.nvim", "debugloop/telescope-undo.nvim" },
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"debugloop/telescope-undo.nvim",
+		},
 		config = function()
 			local builtin = require("telescope.builtin")
 			local pickers = require("user.telescope-pickers")
