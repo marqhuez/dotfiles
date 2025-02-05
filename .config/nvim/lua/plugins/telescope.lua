@@ -9,6 +9,7 @@ return {
 		config = function()
 			local builtin = require("telescope.builtin")
 			local pickers = require("user.telescope-pickers")
+			local conf = require("telescope.config").values
 
 			vim.keymap.set("n", "<leader>fm", function()
 				vim.ui.input({ prompt = "File name mask: " }, function(input)
@@ -19,9 +20,9 @@ return {
 				end, { desc = "Find Files with mask" })
 			end)
 
-			vim.keymap.set("n", "<leader>ff", function()
-				pickers.prettyFilesPicker({ picker = "find_files", options = { hidden = true, no_ignore = true } })
-			end, { desc = "Find Files" })
+			-- vim.keymap.set("n", "<leader>ff", function()
+			-- 	pickers.prettyFilesPicker({ picker = "find_files", options = { hidden = true, no_ignore = true } })
+			-- end, { desc = "Find Files" })
 
 			vim.keymap.set("n", "<leader>fw", function()
 				local api = require("nvim-tree.api")
@@ -39,6 +40,7 @@ return {
 				pickers.prettyGrepPicker({
 					picker = "live_grep",
 					options = options,
+					vimgrep_arguments = table.insert(conf.vimgrep_arguments, "--fixed-strings"),
 				})
 			end, {
 				desc = "Find Word",

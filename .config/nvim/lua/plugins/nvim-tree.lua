@@ -11,7 +11,7 @@ return {
 				ignore = false,
 			},
 			update_focused_file = {
-				enable = true,
+				enable = false,
 				update_root = false,
 				ignore_list = {},
 				exclude = function(tbl)

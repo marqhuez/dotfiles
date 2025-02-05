@@ -7,7 +7,7 @@ return {
 		vim.keymap.set("n", "X", "D", { desc = "Cut" })
 		vim.keymap.set("v", "x", "d", { desc = "Cut" })
 
-		require("cutlass").setup();
+		require("cutlass").setup()
 	end,
-	priority = 3000
+	priority = 4000,
 }
