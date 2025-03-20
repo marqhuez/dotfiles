@@ -53,3 +53,9 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.bo[ev.buf].formatprg = "jq"
 	end,
 })
+
+vim.filetype.add({
+	pattern = {
+		[".*%.blade%.php"] = "blade",
+	},
+})

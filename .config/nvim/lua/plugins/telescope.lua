@@ -106,13 +106,16 @@ return {
 				defaults = {
 					file_ignore_patterns = {
 						"node_modules/",
-						"vendor/",
+						-- "vendor/",
 						"cache/",
 						".phpunit/",
 						".idea/",
 						".git/",
 						"build/",
 						"dist/",
+					},
+					preview = {
+						filesize_limit = 0.5555,
 					},
 				},
 			})

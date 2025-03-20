@@ -72,6 +72,7 @@ return {
 						},
 					},
 				},
+				filetypes = { "php", "blade" },
 			})
 			lspconfig.gopls.setup({
 				filetypes = { "go", "templ" },
@@ -132,6 +133,7 @@ return {
 				},
 				init_options = { userLanguages = { templ = "html", ejs = "html", blade = "html" } },
 			})
+			lspconfig.gdscript.setup(capabilities)
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "LSP Hover" })
 			vim.keymap.set("n", "<C-p>", vim.lsp.buf.signature_help, { desc = "LSP signature help" })
