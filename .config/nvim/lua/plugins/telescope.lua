@@ -31,7 +31,7 @@ return {
 
 				local options
 				if isValidForGrepping then
-					local selectedNodeName = api.tree.get_node_under_cursor().name
+					local selectedNodeName = api.tree.get_node_under_cursor().absolute_path
 					options = { search_dirs = { selectedNodeName } }
 				else
 					options = {}
