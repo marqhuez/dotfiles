@@ -18,6 +18,8 @@ return {
 			local cmp = require("cmp")
 			local luasnip = require("luasnip")
 
+			require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/lua/snippets" })
+
 			vim.keymap.set({ "i", "s" }, "<Tab>", function()
 				luasnip.jump(1)
 			end, { silent = true })

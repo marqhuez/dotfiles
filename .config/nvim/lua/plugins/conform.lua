@@ -14,8 +14,8 @@ return {
 				timeout_ms = 2000,
 				lsp_format = "fallback",
 			},
-			--
-			-- vim.keymap.set("n", "<leader>fm", vim.lsp.buf.format, { desc = "LSP Format" }),
+
+			vim.keymap.set("n", "<leader>fom", vim.lsp.buf.format, { desc = "LSP Format" }),
 
 			-- vim.api.nvim_create_autocmd("BufWritePre", {
 			-- 	pattern = "*",
