@@ -56,6 +56,39 @@ return {
 				}, {
 					{ name = "buffer" },
 				}),
+				sorting = {
+					priority_weight = 2,
+					comparators = {
+						-- 👇 Custom comparator for specific snippet name
+						function(entry1, entry2)
+							local target_label = "dd"
+							local snippet_kind = cmp.lsp.CompletionItemKind.Snippet
+
+							local is_snippet1 = entry1:get_kind() == snippet_kind
+							local is_snippet2 = entry2:get_kind() == snippet_kind
+
+							local label1 = entry1.completion_item.label
+							local label2 = entry2.completion_item.label
+
+							local is_target1 = is_snippet1 and label1 == target_label
+							local is_target2 = is_snippet2 and label2 == target_label
+
+							if is_target1 and not is_target2 then
+								return true
+							elseif is_target2 and not is_target1 then
+								return false
+							end
+						end,
+						cmp.config.compare.offset,
+						cmp.config.compare.exact,
+						cmp.config.compare.score,
+						cmp.config.compare.recently_used,
+						cmp.config.compare.kind,
+						cmp.config.compare.sort_text,
+						cmp.config.compare.length,
+						cmp.config.compare.order,
+					},
+				},
 			})
 		end,
 	},
