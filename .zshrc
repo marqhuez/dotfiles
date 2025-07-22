@@ -137,3 +137,4 @@ export HERD_PHP_84_INI_SCAN_DIR="/Users/marksoltesz/Library/Application Support/
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"

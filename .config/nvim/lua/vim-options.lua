@@ -1,5 +1,18 @@
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "*",
+	callback = function(args)
+		local ft = vim.bo[args.buf].filetype
+
+		if ft == "dart" then
+			vim.opt_local.shiftwidth = 2
+			vim.opt_local.tabstop = 2
+		else
+			vim.opt_local.tabstop = 4
+			vim.opt_local.shiftwidth = 4
+		end
+	end,
+})
+
 vim.opt.relativenumber = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.swapfile = false

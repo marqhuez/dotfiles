@@ -116,7 +116,7 @@ function telescopePickers.prettyFilesPicker(pickerAndOptions)
 			--          and the second one is the highlight information, this will be done by the displayer
 			--          internally and return in the correct format.
 			return displayer({
-				{ icon,          iconHighlight },
+				{ icon, iconHighlight },
 				tailForDisplay,
 				{ pathToDisplay, "TelescopeResultsComment" },
 			})
@@ -125,13 +125,14 @@ function telescopePickers.prettyFilesPicker(pickerAndOptions)
 		return originalEntryTable
 	end
 
+	local builtin = require("telescope.builtin")
 	-- Finally, check which file picker was requested and open it with its associated options
 	if pickerAndOptions.picker == "find_files" then
-		require("telescope.builtin").find_files(options)
+		builtin.find_files(options)
 	elseif pickerAndOptions.picker == "git_files" then
-		require("telescope.builtin").git_files(options)
+		builtin.git_files(options)
 	elseif pickerAndOptions.picker == "oldfiles" then
-		require("telescope.builtin").oldfiles(options)
+		builtin.oldfiles(options)
 	elseif pickerAndOptions.picker == "" then
 		print("Picker was not specified")
 	else
@@ -245,7 +246,7 @@ function telescopePickers.prettyGrepPicker(pickerAndOptions)
 			--          and the second one is the highlight information, this will be done by the displayer
 			--          internally and return in the correct format.
 			return displayer({
-				{ icon,          iconHighlight },
+				{ icon, iconHighlight },
 				tailForDisplay,
 				{ pathToDisplay, "TelescopeResultsComment" },
 				text,
@@ -327,7 +328,7 @@ function telescopePickers.prettyDocumentSymbols(localOptions)
 			return displayer({
 				string.format("%s", kind_icons[(entry.symbol_type:lower():gsub("^%l", string.upper))]),
 				{ entry.symbol_type:lower(), "TelescopeResultsVariable" },
-				{ entry.symbol_name,         "TelescopeResultsConstant" },
+				{ entry.symbol_name, "TelescopeResultsConstant" },
 			})
 		end
 
@@ -371,7 +372,7 @@ function telescopePickers.prettyWorkspaceSymbols(localOptions)
 			return displayer({
 				string.format("%s", kind_icons[(entry.symbol_type:lower():gsub("^%l", string.upper))]),
 				{ entry.symbol_type:lower(), "TelescopeResultsVariable" },
-				{ entry.symbol_name,         "TelescopeResultsConstant" },
+				{ entry.symbol_name, "TelescopeResultsConstant" },
 				tailForDisplay,
 				{ pathToDisplay, "TelescopeResultsComment" },
 			})
@@ -412,10 +413,10 @@ function telescopePickers.prettyBuffersPicker(localOptions)
 			local icon, iconHighlight = telescopeUtilities.get_devicons(tail)
 
 			return displayer({
-				{ icon,                      iconHighlight },
+				{ icon, iconHighlight },
 				tailForDisplay,
 				{ "(" .. entry.bufnr .. ")", "TelescopeResultsNumber" },
-				{ path,                      "TelescopeResultsComment" },
+				{ path, "TelescopeResultsComment" },
 			})
 		end
 
@@ -454,7 +455,7 @@ function telescopePickers.prettyLspActions(pickerAndOptions)
 			local coordinates = string.format("%s:%s ", entry.lnum, entry.col)
 
 			return displayer({
-				{ icon,          iconHighlight },
+				{ icon, iconHighlight },
 				tailForDisplay .. coordinates,
 				{ pathToDisplay, "TelescopeResultsComment" },
 			})
