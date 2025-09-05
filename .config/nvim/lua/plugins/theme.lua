@@ -1,10 +1,3 @@
--- nvchad onedar
--- return {
--- "notken12/base46-colors",
--- config = function()
--- 	require("onedark").setup()
--- end,
--- }
 -- catppuccin
 -- return {
 -- 	"catppuccin/nvim",
@@ -14,6 +7,8 @@
 -- 		vim.cmd.colorscheme("catppuccin-macchiato")
 -- 	end,
 -- }
+
+-- onedark custom
 return {
 	{
 		"olimorris/onedarkpro.nvim",
@@ -66,9 +61,3 @@ return {
 		end,
 	},
 }
--- return {
--- 	"navarasu/onedark.nvim",
--- 	config = function()
--- 		vim.cmd.colorscheme("onedark")
--- 	end,
--- }

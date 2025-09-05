@@ -52,3 +52,4 @@ vim.keymap.set("n", "<leader>lr", ":LspRestart<CR>", { desc = "Restart LSP Serve
 vim.keymap.set("n", "<leader>v", "<c-v>", { desc = "Block select" })
 
 vim.keymap.set("n", "<leader>fr", ":FlutterRestart<CR>", { desc = "Restart Flutter App" })
+vim.keymap.set("n", "<leader>flt", ":FlutterLogToggle<CR>", { desc = "Toggle Flutter Logs" })

@@ -72,3 +72,26 @@ vim.filetype.add({
 		[".*%.blade%.php"] = "blade",
 	},
 })
+--
+-- vim.api.nvim_create_autocmd({ "TextChanged", "TextChangedI" }, {
+-- 	callback = function(args)
+-- 		local buf = args.buf
+-- 		local name = vim.api.nvim_buf_get_name(buf)
+-- 		if name:match("__FLUTTER_DEV_LOG__") then
+-- 			-- Get full buffer content
+-- 			local lines = vim.api.nvim_buf_get_lines(buf, 0, -1, false)
+-- 			local path = "/Users/marksoltesz/flutter_dev_log_sync.txt" -- Your chosen sync file
+--
+-- 			-- Write buffer contents to file
+-- 			local f = io.open(path, "w")
+-- 			if f then
+-- 				for _, line in ipairs(lines) do
+-- 					f:write(line .. "\n")
+-- 				end
+-- 				f:close()
+-- 			else
+-- 				vim.notify("Failed to open sync file", vim.log.levels.ERROR)
+-- 			end
+-- 		end
+-- 	end,
+-- })
