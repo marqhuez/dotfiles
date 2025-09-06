@@ -54,10 +54,4 @@ return {
 			vim.api.nvim_set_hl(0, "FzfLuaFzfInfo", { fg = "#7e8189" })
 		end,
 	},
-	{
-		"norcalli/nvim-colorizer.lua",
-		config = function()
-			require("colorizer").setup()
-		end,
-	},
 }

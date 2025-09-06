@@ -13,5 +13,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("vim-options")
 require("mappings")
+require("user.colorify").run()
 
 require("lazy").setup("plugins")
