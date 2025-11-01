@@ -21,6 +21,18 @@ return {
 				capabilities = capabilities,
 			})
 
+			vim.lsp.config('intelephense', {
+				capabilities = capabilities,
+				settings = {
+					intelephense = {
+						files = {
+							maxSize = 10000000,
+						},
+					}
+				}
+			})
+			vim.lsp.enable('intelephense')
+
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "LSP Hover" })
 			vim.keymap.set("n", "<C-p>", vim.lsp.buf.signature_help, { desc = "LSP signature help" })
 			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename" })

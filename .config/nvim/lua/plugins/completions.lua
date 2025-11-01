@@ -20,12 +20,12 @@ return {
 
 			require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/lua/snippets" })
 
-			vim.keymap.set({ "i", "s" }, "<Tab>", function()
-				luasnip.jump(1)
-			end, { silent = true })
-			vim.keymap.set({ "i", "s" }, "<S-Tab>", function()
-				luasnip.jump(-1)
-			end, { silent = true })
+			-- vim.keymap.set({ "i", "s" }, "<Tab>", function()
+			-- 	luasnip.jump(1)
+			-- end, { silent = true })
+			-- vim.keymap.set({ "i", "s" }, "<S-Tab>", function()
+			-- 	luasnip.jump(-1)
+			-- end, { silent = true })
 
 			require("luasnip.loaders.from_vscode").lazy_load()
 

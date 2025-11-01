@@ -17,6 +17,8 @@ alias ll='eza -alh'
 alias tree='eza --tree'
 alias cat=bat
 alias cd='z'
+alias nvim-unity='nvim --listen ~/.cache/nvim/server.pipe'
+alias vim-unity='nvim --listen ~/.cache/nvim/server.pipe'
 
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
@@ -119,3 +121,7 @@ plugins=(git)
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 export PATH=$HOME/.fluttersdk/bin:$PATH
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

@@ -4,8 +4,9 @@ vim.api.nvim_create_autocmd("FileType", {
 		local ft = vim.bo[args.buf].filetype
 
 		if ft == "dart" then
-			vim.opt_local.shiftwidth = 2
+			vim.opt.expandtab = true
 			vim.opt_local.tabstop = 2
+			vim.opt_local.shiftwidth = 2
 		else
 			vim.opt_local.tabstop = 4
 			vim.opt_local.shiftwidth = 4
@@ -72,26 +73,14 @@ vim.filetype.add({
 		[".*%.blade%.php"] = "blade",
 	},
 })
---
--- vim.api.nvim_create_autocmd({ "TextChanged", "TextChangedI" }, {
--- 	callback = function(args)
--- 		local buf = args.buf
--- 		local name = vim.api.nvim_buf_get_name(buf)
--- 		if name:match("__FLUTTER_DEV_LOG__") then
--- 			-- Get full buffer content
--- 			local lines = vim.api.nvim_buf_get_lines(buf, 0, -1, false)
--- 			local path = "/Users/marksoltesz/flutter_dev_log_sync.txt" -- Your chosen sync file
---
--- 			-- Write buffer contents to file
--- 			local f = io.open(path, "w")
--- 			if f then
--- 				for _, line in ipairs(lines) do
--- 					f:write(line .. "\n")
--- 				end
--- 				f:close()
--- 			else
--- 				vim.notify("Failed to open sync file", vim.log.levels.ERROR)
--- 			end
--- 		end
--- 	end,
--- })
+
+vim.diagnostic.config({
+	virtual_text = {
+		prefix = "", -- could be '■', '▎', 'x'
+		spacing = 2,
+	},
+	signs = true,
+	underline = true,
+	update_in_insert = false,
+	severity_sort = true,
+})

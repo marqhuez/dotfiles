@@ -12,9 +12,10 @@ return {
 				typescriptreact = {
 					"eslint_d",
 				},
-				php = {
-					"phpstan",
-				},
+				json = { "jsonlint" },
+				-- php = {
+				-- 	"phpstan",
+				-- },
 			}
 
 			vim.api.nvim_create_autocmd({ "InsertLeave", "BufWritePost" }, {

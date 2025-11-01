@@ -51,5 +51,8 @@ end, { desc = "Diagnostic setloclist" })
 vim.keymap.set("n", "<leader>lr", ":LspRestart<CR>", { desc = "Restart LSP Server" })
 vim.keymap.set("n", "<leader>v", "<c-v>", { desc = "Block select" })
 
-vim.keymap.set("n", "<leader>fr", ":FlutterRestart<CR>", { desc = "Restart Flutter App" })
-vim.keymap.set("n", "<leader>flt", ":FlutterLogToggle<CR>", { desc = "Toggle Flutter Logs" })
+vim.keymap.set("n", "<leader>rr", ":FlutterRun<CR>", { desc = "Run Flutter app" })
+vim.keymap.set("n", "<leader>rs", ":FlutterRestart<CR>", { desc = "Restart Flutter App" })
+vim.keymap.set("n", "<leader>rl", ":FlutterLogToggle<CR>", { desc = "Toggle Flutter Logs" })
+
+vim.keymap.set("v", "i", "di", { desc = "Remove word and enter Insert mode" })
