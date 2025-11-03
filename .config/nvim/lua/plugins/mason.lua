@@ -1,13 +1,11 @@
 return {
 	{
 		"williamboman/mason.nvim",
-		config = function()
-			require("mason").setup({
-				ensure_installed = {
-					"prettierd",
-					"stylua",
-				},
-			})
-		end,
+		opts = {
+			registries = {
+				"github:mason-org/mason-registry",
+				"github:Crashdummyy/mason-registry",
+			},
+		}
 	},
 }

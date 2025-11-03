@@ -12,14 +12,13 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			local lspconfig = require("lspconfig")
-
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
 			capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
-			lspconfig.lua_ls.setup({
+			vim.lsp.config('lua_ls', {
 				capabilities = capabilities,
 			})
+			vim.lsp.enable('lua_ls')
 
 			vim.lsp.config('intelephense', {
 				capabilities = capabilities,
@@ -32,6 +31,8 @@ return {
 				}
 			})
 			vim.lsp.enable('intelephense')
+
+			vim.lsp.enable('roslyn_ls')
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "LSP Hover" })
 			vim.keymap.set("n", "<C-p>", vim.lsp.buf.signature_help, { desc = "LSP signature help" })
