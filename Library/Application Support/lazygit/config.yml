@@ -20,13 +20,3 @@ theme:
     - "#cad3f5"
   searchingActiveBorderColor:
     - "#eed49f"
-
-keybinding:
-  universal:
-    prevItem-alt: "j" # go one line up
-    nextItem-alt: "k" # go one line down
-    scrollUpMain-alt1: "J" # main panel scroll up
-    scrollDownMain-alt1: "K" # main panel scroll down
-  commits:
-    moveDownCommit: "<c-k>" # move commit down one
-    moveUpCommit: "<c-j>" # move commit up one
