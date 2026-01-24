@@ -28,5 +28,10 @@ return {
 
 		vim.cmd("NvimTreeOpen")
 		vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<c-w>l", true, true, true), "n", true)
+
+		local bgColor = "#1b1e24"
+		vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = bgColor })
+		vim.api.nvim_set_hl(0, "NvimTreeNormalNC", { bg = bgColor })
+		vim.api.nvim_set_hl(0, "NvimTreeEndOfBuffer", { bg = bgColor })
 	end,
 }
