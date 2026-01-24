@@ -10,6 +10,9 @@ return {
 			git = {
 				ignore = false,
 			},
+			filters = {
+				custom = { ".DS_Store" },
+			},
 			update_focused_file = {
 				enable = false,
 				update_root = false,
