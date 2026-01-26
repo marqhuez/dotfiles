@@ -11,7 +11,7 @@ return {
 				ignore = false,
 			},
 			filters = {
-				custom = { ".DS_Store" },
+				custom = { ".DS_Store", "**.g.dart", "**.freezed.dart" },
 			},
 			update_focused_file = {
 				enable = false,
