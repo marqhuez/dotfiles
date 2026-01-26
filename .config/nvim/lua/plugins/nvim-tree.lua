@@ -33,5 +33,16 @@ return {
 		vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = bgColor })
 		vim.api.nvim_set_hl(0, "NvimTreeNormalNC", { bg = bgColor })
 		vim.api.nvim_set_hl(0, "NvimTreeEndOfBuffer", { bg = bgColor })
+
+		local api = require("nvim-tree.api")
+		local Event = api.events.Event
+
+		local prev = { new_name = "", old_name = "" } -- Prevents duplicate events
+		api.events.subscribe(Event.NodeRenamed, function(data)
+			if prev.new_name ~= data.new_name or prev.old_name ~= data.old_name then
+				data = data
+				Snacks.rename.on_rename_file(data.old_name, data.new_name)
+			end
+		end)
 	end,
 }
