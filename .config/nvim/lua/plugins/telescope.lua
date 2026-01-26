@@ -19,8 +19,15 @@ return {
 		local builtin = require("telescope.builtin")
 		vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
 		vim.keymap.set("n", "<leader>fw", builtin.live_grep, { desc = "Telescope live grep" })
+		vim.keymap.set(
+			"n",
+			"<leader>fi",
+			builtin.current_buffer_fuzzy_find,
+			{ desc = "Telescope fuzzy find in current buffer" }
+		)
 		vim.keymap.set("n", "gd", builtin.lsp_definitions, { desc = "Goto definition (Telescope)" })
 		vim.keymap.set("n", "gr", builtin.lsp_references, { desc = "Goto references (Telescope)" })
+		vim.keymap.set("n", "gi", builtin.lsp_implementations, { desc = "Goto implementations (Telescope)" })
 
 		local borderColor = "#535965"
 		vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = borderColor })
