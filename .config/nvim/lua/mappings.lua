@@ -6,6 +6,9 @@ vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Jump down" })
 vim.keymap.set("n", "í", '"_dl', { desc = "Delete char" })
 vim.keymap.set("v", "p", '"_dP', {})
 
+vim.keymap.set("n", "j", "gj")
+vim.keymap.set("n", "k", "gk")
+
 vim.keymap.set("n", "<leader>x", ":q<CR>", { desc = "Close buffer" })
 
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", {})
