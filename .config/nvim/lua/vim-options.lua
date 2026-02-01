@@ -2,10 +2,21 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.softtabstop = 2
-vim.opt.expandtab = true
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "*",
+	callback = function(args)
+		local ft = vim.bo[args.buf].filetype
+
+		if ft == "dart" then
+			vim.opt.expandtab = true
+			vim.opt_local.tabstop = 2
+			vim.opt_local.shiftwidth = 2
+		else
+			vim.opt_local.tabstop = 4
+			vim.opt_local.shiftwidth = 4
+		end
+	end,
+})
 
 -- optionally enable 24-bit colour
 vim.opt.termguicolors = true
