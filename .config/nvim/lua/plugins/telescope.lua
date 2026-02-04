@@ -22,21 +22,18 @@ return {
 			local api = require("nvim-tree.api")
 			local isValidForGrepping = api.tree.is_tree_buf() and api.tree.get_node_under_cursor().type == "directory"
 
-			local options
-			if isValidForGrepping then
-				local selectedNodeName = api.tree.get_node_under_cursor().absolute_path
-				options = { search_dirs = { selectedNodeName } }
-			else
-				options = {}
-			end
-
-			builtin.live_grep({
-				picker = "live_grep",
-				options = options,
+			local options = {
 				additional_args = function()
 					return { "--fixed-strings" }
 				end,
-			})
+			}
+
+			if isValidForGrepping then
+				local selectedNodePath = api.tree.get_node_under_cursor().absolute_path
+				options.search_dirs = { selectedNodePath }
+			end
+
+			builtin.live_grep(options)
 		end, {
 			desc = "Telescope live grep",
 		})
