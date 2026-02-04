@@ -18,7 +18,28 @@ return {
 
 		local builtin = require("telescope.builtin")
 		vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
-		vim.keymap.set("n", "<leader>fw", builtin.live_grep, { desc = "Telescope live grep" })
+		vim.keymap.set("n", "<leader>fw", function()
+			local api = require("nvim-tree.api")
+			local isValidForGrepping = api.tree.is_tree_buf() and api.tree.get_node_under_cursor().type == "directory"
+
+			local options
+			if isValidForGrepping then
+				local selectedNodeName = api.tree.get_node_under_cursor().absolute_path
+				options = { search_dirs = { selectedNodeName } }
+			else
+				options = {}
+			end
+
+			builtin.live_grep({
+				picker = "live_grep",
+				options = options,
+				additional_args = function()
+					return { "--fixed-strings" }
+				end,
+			})
+		end, {
+			desc = "Telescope live grep",
+		})
 		vim.keymap.set(
 			"n",
 			"<leader>fi",
