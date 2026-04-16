@@ -147,3 +147,10 @@ unset __conda_setup
 
 
 . "$HOME/.local/bin/env"
+
+# bun completions
+[ -s "/Users/marqhuez/.bun/_bun" ] && source "/Users/marqhuez/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
