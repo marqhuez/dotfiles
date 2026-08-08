@@ -20,6 +20,8 @@ alias cd='z'
 alias nvim-unity='nvim --listen ~/.cache/nvim/server.pipe'
 alias vim-unity='nvim --listen ~/.cache/nvim/server.pipe'
 
+alias kj='kill -9 %1'
+
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
 

@@ -4,7 +4,6 @@ return {
 		vim.lsp.enable("lua_ls")
 		vim.lsp.enable("pyright")
 		vim.lsp.enable("intelephense")
-		vim.lsp.enable("intelephense")
 		vim.lsp.enable("ts_ls")
 		vim.lsp.enable("clangd")
 
