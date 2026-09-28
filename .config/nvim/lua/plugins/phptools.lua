@@ -69,12 +69,12 @@ return {
 		map("n", "<leader>lhi", ide_helper.install, { desc = "Install IDE Helper package" })
 
 		-- Test runner commands
-		map("n", "<Leader>ta", tests.test.all, { desc = "Run all tests" })
-		map("n", "<Leader>tf", tests.test.file, { desc = "Run file tests" })
-		map("n", "<Leader>tl", tests.test.line, { desc = "Run test at cursor" })
-		map("n", "<Leader>ts", tests.test.filter, { desc = "Search and run test" })
-		map("n", "<Leader>tp", tests.test.parallel, { desc = "Run tests in parallel" })
-		map("n", "<Leader>tr", tests.test.rerun, { desc = "Rerun last test" })
-		map("n", "<Leader>ti", tests.test.selected, { desc = "Run selected test file" })
+		map("n", "<leader>tt", tests.test.all, { desc = "Run all tests" })
+		-- map("n", "<Leader>tf", tests.test.file, { desc = "Run file tests" })
+		-- map("n", "<Leader>tl", tests.test.line, { desc = "Run test at cursor" })
+		-- map("n", "<Leader>ts", tests.test.filter, { desc = "Search and run test" })
+		-- map("n", "<Leader>tp", tests.test.parallel, { desc = "Run tests in parallel" })
+		-- map("n", "<Leader>tr", tests.test.rerun, { desc = "Rerun last test" })
+		-- map("n", "<Leader>ti", tests.test.selected, { desc = "Run selected test file" })
 	end,
 }

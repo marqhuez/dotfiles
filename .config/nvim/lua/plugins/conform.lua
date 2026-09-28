@@ -7,6 +7,7 @@ return {
 				lua = { "stylua" },
 				python = { "black" },
 				javascript = { "prettierd" },
+				php = { "php_cs_fixer" },
 			},
 			format_on_save = {
 				timeout_ms = 500,
