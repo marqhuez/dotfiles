@@ -8,7 +8,7 @@ return {
 	},
 	config = function()
 		require("flutter-tools").setup({
-			flutter_path = "/Users/marqhuez/.fluttersdk/bin/flutter",
+			flutter_path = "/Users/marqhuez/Work/flutter/bin/flutter",
 			dev_log = {
 				append_to_file = true,
 				log_file_path = "/Users/marqhuez/.flutter_dev_log_sync.txt",

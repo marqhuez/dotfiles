@@ -9,9 +9,10 @@ return {
 		require("nvim-tree").setup({
 			git = {
 				ignore = false,
+				timeout = 2000,
 			},
 			filters = {
-				custom = { ".DS_Store", "**.g.dart", "**.freezed.dart" },
+				custom = { "^\\.DS_Store$", "\\.g\\.dart$", "\\.freezed\\.dart$" },
 			},
 			update_focused_file = {
 				enable = false,
