@@ -15,6 +15,14 @@ return {
 		})
 		vim.lsp.enable("ts_ls")
 		vim.lsp.enable("clangd")
+		vim.lsp.config("gopls", {
+			settings = {
+				gopls = {
+					gofumpt = true,
+				},
+			},
+		})
+		vim.lsp.enable("gopls")
 
 		vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename" })
 		vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
